@@ -37,10 +37,12 @@ if (isset($_SESSION['username'])) {
             <div class="jarak_kiri">
                 <img src="aset/twitter (2).png" class="logo">
 
-                <div class="home">
-                    <img src="aset/home.png" alt="home" id="home">
-                    <h6 id="ya">Home</h6>
-                </div>
+                <a href="dashboard.php" class="home-link">
+                    <div class="home">
+                        <img src="aset/home.png" alt="home" id="home">
+                        <h6 id="ya">Home</h6>
+                    </div>
+                </a>
 
                 <div class="search">
                     <img src="aset/search.png" alt="search" id="search">
@@ -109,18 +111,15 @@ if (isset($_SESSION['username'])) {
                         <h4 id="nama"><?php echo $_SESSION['username']; ?></h4>
                         <h4 id="user"><?php echo $_SESSION['username']; ?></h4>
                     </div>
-                    <img src="aset/text.png" alt="elip" class="elipsis">
+                    <img src="aset/text.png" alt="elip" class="elipsis" id="btn-logout">
                 </div>
             </div>
         </div>
 
         <div class="tengah">
-            <div class="tabKembali">
-                <img src="aset/back.png" alt="Back" id="kembali">
-                <div class="pas">
-                    <h2 id="namaKem"><?php echo $_SESSION['username']; ?></h2>
-                    <p id="iyo"><?php echo $jumlahPostingan; ?> Postingan</p>
-                </div>
+            <div class="pas">
+                <h2 id="namaKem"><?php echo $_SESSION['username']; ?></h2>
+                <p id="iyo"><?php echo $jumlahPostingan; ?> Postingan</p>
             </div>
 
             <div class="bg">
@@ -227,120 +226,120 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
 
-    <div class="kanan">
-        <div class="searchBar">
-            <img src="aset/search.png" id="cari" />
-            <h6 id="teksSearch">Search</h6>
-        </div>
+        <div class="kanan">
+            <div class="searchBar">
+                <img src="aset/search.png" id="cari" />
+                <h6 id="teksSearch">Search</h6>
+            </div>
 
-        <div class="bubble" id="rekom">
-            <h1 id="you">You might like</h1>
-            <div class="mungkinSuka">
-                <img src="aset/jiso.jpg" alt="Profile" id="photo" />
-                <div class="profilee-text">
-                    <h4 id="namaa">Johns Charts</h4>
-                    <h4 id="userr">@johncharts</h4>
+            <div class="bubble" id="rekom">
+                <h1 id="you">You might like</h1>
+                <div class="mungkinSuka">
+                    <img src="aset/jiso.jpg" alt="Profile" id="photo" />
+                    <div class="profilee-text">
+                        <h4 id="namaa">Johns Charts</h4>
+                        <h4 id="userr">@johncharts</h4>
+                    </div>
+                    <button class="follow">Follow</button>
                 </div>
-                <button class="follow">Follow</button>
-            </div>
 
-            <div class="mungkinSuka">
-                <img src="aset/lisa.jpg" alt="Profile" id="photo" />
-                <div class="profilee-text">
-                    <h4 id="namaa">NYSE</h4>
-                    <h4 id="userr">@nyswy</h4>
+                <div class="mungkinSuka">
+                    <img src="aset/lisa.jpg" alt="Profile" id="photo" />
+                    <div class="profilee-text">
+                        <h4 id="namaa">NYSE</h4>
+                        <h4 id="userr">@nyswy</h4>
+                    </div>
+                    <button class="follow">Follow</button>
                 </div>
-                <button class="follow">Follow</button>
-            </div>
 
-            <div class="mungkinSuka">
-                <img src="aset/rm.jpg" alt="Profile" id="photo" />
-                <div class="profilee-text">
-                    <h4 id="namaa">RM</h4>
-                    <h4 id="userr">@BTS_twt_RMJOON</h4>
+                <div class="mungkinSuka">
+                    <img src="aset/rm.jpg" alt="Profile" id="photo" />
+                    <div class="profilee-text">
+                        <h4 id="namaa">RM</h4>
+                        <h4 id="userr">@BTS_twt_RMJOON</h4>
+                    </div>
+                    <button class="follow">Follow</button>
                 </div>
-                <button class="follow">Follow</button>
+
+                <div class="lebihBanyak" id="moreItem">
+                    <h5>Show more</h5>
+                </div>
             </div>
 
-            <div class="lebihBanyak" id="moreItem">
-                <h5>Show more</h5>
+            <div class="bubble">
+                <h1 id="hangatt">What's happening</h1>
+                <div class="lebihBanyak">
+                    <span class="kategori_trend">Trending in Indonesia</span>
+                    <p class="nama_trend">Pepaya</p>
+                    <span class="jumlah_trend">213K posts</span>
+                    <span class="opsi_lainnya">•••</span>
+                </div>
+
+                <div class="lebihBanyak">
+                    <span class="kategori_trend">Politics · Trending</span>
+                    <p class="nama_trend">Pertamax</p>
+                    <span class="jumlah_trend">209K posts</span>
+                    <span class="opsi_lainnya">•••</span>
+                </div>
+
+                <div class="lebihBanyak">
+                    <span class="kategori_trend">Trending in Indonesia</span>
+                    <p class="nama_trend">Hujan</p>
+                    <span class="jumlah_trend">112K posts</span>
+                    <span class="opsi_lainnya">•••</span>
+                </div>
+
+                <div class="lebihBanyak">
+                    <span class="kategori_trend">Trending in Korea</span>
+                    <p class="nama_trend">Suga</p>
+                    <span class="jumlah_trend">567K posts</span>
+                    <span class="opsi_lainnya">•••</span>
+                </div>
+
+                <div class="lebihBanyak" id="moreItem">
+                    <h5>Show more</h5>
+                </div>
             </div>
+            <br />
+
+            <footer>
+                <div class="bawah_sendiri">
+                    <a href="https://about.x.com/en">About</a>
+                    <a href="https://help.x.com/en/using-x/download-the-x-app">Download the X app</a>
+                    <a href="https://help.x.com/en">Help Center</a>
+                    <a href="https://x.com/en/tos">Terms of Service</a>
+                    <a href="https://x.com/en/privacy">Privacy Policy</a>
+                    <a href="https://help.x.com/en/rules-and-policies/x-cookies">Cookie Policy</a>
+                    <a href="https://help.x.com/en/resources/accessibility">Accessibility</a>
+                    <a href="https://business.x.com/en/help/troubleshooting/how-x-ads-work">Ads info</a>
+                    <a href="https://blog.x.com/">Blog</a>
+                    <a href="https://careers.x.com/en">Careers</a>
+                    <a href="https://about.x.com/en/who-we-are/brand-toolkit">Brand Resource</a>
+                    <a href="https://business.x.com/en/advertising?ref=gl-tw-tw-twitter-advertise">Advertising</a>
+                    <a href="https://business.x.com/en">Marketing</a>
+                    <a
+                        href="https://business.x.com/en?ref=web-twc-ao-gbl-twitterforbusiness&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=twitterforbusiness">X
+                        for Business</a>
+                    <a href="https://developer.x.com/en">Developers</a>
+                    <a href="https://x.com/i/directory/profiles">Directory</a>
+                    <a href="https://x.com/settings/account/personalization">Settings</a>
+                </div>
+                <p>© 2025 X Corp.</p>
+            </footer>
         </div>
 
-        <div class="bubble">
-            <h1 id="hangatt">What's happening</h1>
-            <div class="lebihBanyak">
-                <span class="kategori_trend">Trending in Indonesia</span>
-                <p class="nama_trend">Pepaya</p>
-                <span class="jumlah_trend">213K posts</span>
-                <span class="opsi_lainnya">•••</span>
-            </div>
+        <div class="grok_bawah">
+            <img src="aset/grok.png" alt="GROK" />
+            <span>GROK</span>
+        </div>
 
-            <div class="lebihBanyak">
-                <span class="kategori_trend">Politics · Trending</span>
-                <p class="nama_trend">Pertamax</p>
-                <span class="jumlah_trend">209K posts</span>
-                <span class="opsi_lainnya">•••</span>
-            </div>
-
-            <div class="lebihBanyak">
-                <span class="kategori_trend">Trending in Indonesia</span>
-                <p class="nama_trend">Hujan</p>
-                <span class="jumlah_trend">112K posts</span>
-                <span class="opsi_lainnya">•••</span>
-            </div>
-
-            <div class="lebihBanyak">
-                <span class="kategori_trend">Trending in Korea</span>
-                <p class="nama_trend">Suga</p>
-                <span class="jumlah_trend">567K posts</span>
-                <span class="opsi_lainnya">•••</span>
-            </div>
-
-            <div class="lebihBanyak" id="moreItem">
-                <h5>Show more</h5>
+        <div class="pesan-bar">
+            <span class="pesan-title">Pesan</span>
+            <div class="pesan-icons">
+                <i class="fas fa-envelope"></i>
+                <i class="fas fa-chevron-up"></i>
             </div>
         </div>
-        <br />
-
-        <footer>
-            <div class="bawah_sendiri">
-                <a href="https://about.x.com/en">About</a>
-                <a href="https://help.x.com/en/using-x/download-the-x-app">Download the X app</a>
-                <a href="https://help.x.com/en">Help Center</a>
-                <a href="https://x.com/en/tos">Terms of Service</a>
-                <a href="https://x.com/en/privacy">Privacy Policy</a>
-                <a href="https://help.x.com/en/rules-and-policies/x-cookies">Cookie Policy</a>
-                <a href="https://help.x.com/en/resources/accessibility">Accessibility</a>
-                <a href="https://business.x.com/en/help/troubleshooting/how-x-ads-work">Ads info</a>
-                <a href="https://blog.x.com/">Blog</a>
-                <a href="https://careers.x.com/en">Careers</a>
-                <a href="https://about.x.com/en/who-we-are/brand-toolkit">Brand Resource</a>
-                <a href="https://business.x.com/en/advertising?ref=gl-tw-tw-twitter-advertise">Advertising</a>
-                <a href="https://business.x.com/en">Marketing</a>
-                <a
-                    href="https://business.x.com/en?ref=web-twc-ao-gbl-twitterforbusiness&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=twitterforbusiness">X
-                    for Business</a>
-                <a href="https://developer.x.com/en">Developers</a>
-                <a href="https://x.com/i/directory/profiles">Directory</a>
-                <a href="https://x.com/settings/account/personalization">Settings</a>
-            </div>
-            <p>© 2025 X Corp.</p>
-        </footer>
-    </div>
-
-    <div class="grok_bawah">
-        <img src="aset/grok.png" alt="GROK" />
-        <span>GROK</span>
-    </div>
-
-    <div class="pesan-bar">
-        <span class="pesan-title">Pesan</span>
-        <div class="pesan-icons">
-            <i class="fas fa-envelope"></i>
-            <i class="fas fa-chevron-up"></i>
-        </div>
-    </div>
     </div>
 
     <!-- modals -->
@@ -461,6 +460,13 @@ if (isset($_SESSION['username'])) {
             const modalReply = document.getElementById("modal-reply");
             const replyTextarea = modalReply.querySelector("textarea");
             const replyPreview = modalReply.querySelector(".reply-preview");
+            const replyBtn = modalReply.querySelector("button");
+
+            replyTextarea.addEventListener("input", function() {
+                const isKosong = replyTextarea.value.trim() === '';
+                replyBtn.disabled = isKosong;
+                replyBtn.style.backgroundColor = isKosong ? 'rgba(0, 0, 0, 0.2)' : 'black';
+            });
 
             document.querySelector(".konten").addEventListener("click", function(e) {
                 if (e.target.classList.contains("btn-reply")) {
@@ -471,6 +477,8 @@ if (isset($_SESSION['username'])) {
                     modalReply.setAttribute("data-id", id);
                     replyPreview.innerHTML = `<div class="preview"><strong>${username}</strong>: ${isi}</div>`;
                     replyTextarea.value = "";
+                    replyBtn.disabled = true;
+                    replyBtn.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
                     modalReply.style.display = "flex";
                 }
             });
@@ -481,7 +489,7 @@ if (isset($_SESSION['username'])) {
                 replyPreview.innerHTML = "";
             });
 
-            modalReply.querySelector("button").addEventListener("click", function() {
+            replyBtn.addEventListener("click", function() {
                 const isi = replyTextarea.value.trim();
                 const id = modalReply.getAttribute("data-id");
 

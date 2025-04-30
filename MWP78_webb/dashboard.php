@@ -31,6 +31,8 @@ if (isset($_SESSION['username'])) {
 
     <title>ria</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -89,10 +91,12 @@ if (isset($_SESSION['username'])) {
                     <h6 id="ya">Verified Orgs</h6>
                 </div>
 
-                <div class="profile">
-                    <img src="aset/user.png" alt="profile" id="profile">
-                    <h6 id="ya">Profile</h6>
-                </div>
+                <a href="profil.php" class="home-link">
+                    <div class="profile">
+                        <img src="aset/user.png" alt="profile" id="profile">
+                        <h6 id="ya">Profile</h6>
+                    </div>
+                </a>
 
                 <div class="more">
                     <img src="aset/more.png" alt="more" id="more">
@@ -100,8 +104,8 @@ if (isset($_SESSION['username'])) {
                 </div><br>
 
                 <div>
-                    <button class="posting">
-                        <h4 id="post">Post</h4>
+                    <button class="postingBtn" id="postingBtn">
+                        <h4 id="pos">Posting</h4>
                     </button>
                 </div><br><br><br>
 
@@ -111,7 +115,7 @@ if (isset($_SESSION['username'])) {
                         <h4 id="nama"><?php echo $_SESSION['username']; ?></h4>
                         <h4 id="user"><?php echo $_SESSION['username']; ?></h4>
                     </div>
-                    <img src="aset/text.png" alt="elip" class="elipsis">
+                    <img src="aset/text.png" alt="elip" class="elipsis" id="btn-logout">
                 </div>
             </div>
         </div>
@@ -401,6 +405,14 @@ if (isset($_SESSION['username'])) {
             const modalReply = document.getElementById("modal-reply");
             const replyTextarea = modalReply.querySelector("textarea");
             const replyPreview = modalReply.querySelector(".reply-preview");
+            const replyBtn = modalReply.querySelector("button");
+
+            // Tambahkan listener input untuk mengatur tombol
+            replyTextarea.addEventListener("input", function() {
+                const isKosong = replyTextarea.value.trim() === '';
+                replyBtn.disabled = isKosong;
+                replyBtn.style.backgroundColor = isKosong ? 'rgba(0, 0, 0, 0.2)' : 'black';
+            });
 
             document.querySelector(".konten").addEventListener("click", function(e) {
                 if (e.target.classList.contains("btn-reply")) {
@@ -411,6 +423,8 @@ if (isset($_SESSION['username'])) {
                     modalReply.setAttribute("data-id", id);
                     replyPreview.innerHTML = `<div class="preview"><strong>${username}</strong>: ${isi}</div>`;
                     replyTextarea.value = "";
+                    replyBtn.disabled = true; // saat modal dibuka, tombol disable dulu
+                    replyBtn.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
                     modalReply.style.display = "flex";
                 }
             });
@@ -421,7 +435,7 @@ if (isset($_SESSION['username'])) {
                 replyPreview.innerHTML = "";
             });
 
-            modalReply.querySelector("button").addEventListener("click", function() {
+            replyBtn.addEventListener("click", function() {
                 const isi = replyTextarea.value.trim();
                 const id = modalReply.getAttribute("data-id");
 

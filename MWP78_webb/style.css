@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+    background-color: black; /* Sesuaikan dengan warna latar belakang utama */
+}
 .kiri {
     background-color: black;
     width: 593px;
@@ -20,6 +24,12 @@
     display: flex;
     align-items: center;
 }
+
+.home-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
 
 .home,
 .search,
@@ -91,6 +101,7 @@
     width: auto;
     height: auto;
     padding: 0;
+    display: flex;;
     background-color: #000;
 }
 
@@ -150,8 +161,8 @@
 }
 
 #bg {
-    width: 638px;
-    height: 200px;
+    width: 700px;
+    height: 205px;
     margin-top: 50px;
 }
 
@@ -276,7 +287,7 @@
     color: #6b6b6b;
     font-size: 15px;
     margin-top: 9px;
-    margin-left: 150px;
+    margin-left: -300px;
     font-weight: bold;
 
 }
@@ -284,7 +295,7 @@
 .jumlahFollowers {
     color: white;
     font-size: 15px;
-    margin-left: 120px;
+    margin-left: 130px;
     position: absolute;
     cursor: pointer;
 }
@@ -314,6 +325,10 @@
     margin-bottom: 16PX;
     gap: 45px;
     color: #6b6b6b;
+}
+
+.posts{
+    color: #fff;
 }
 
 .highlightss {
@@ -439,7 +454,6 @@
     font-weight: bold;
     margin-left: auto;
 }
-
 .bubble {
     width: 370px;
     border: 1px solid grey;
@@ -447,6 +461,11 @@
     padding: 15px;
     margin-left: 50px;
     margin-top: 15px;
+}
+
+.nama_trend {
+    display: flex;
+    justify-content: start;
 }
 
 .lebihBanyak {
@@ -555,7 +574,7 @@
 .pesan-bar {
     position: fixed;
     bottom: 0;
-    right: 20px;
+    right: 122px;
     width: 350px;
     background-color: white;
     display: flex;
@@ -580,8 +599,11 @@ footer {
 
 .footer-link {
     display: flex;
-    justify-content: center;
+    text-align: center;
     gap: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
 }
 
 footer a,
@@ -694,11 +716,11 @@ textarea::placeholder {
 
 /* postingan */
 .postingan {
-    width: 560px;
-    background-color: #fff;
-    padding: 10px;
+    width: 580px;
+    background-color: #000;
+    padding: 5px;
     display: flex;
-    gap: 10px;
+    gap: 13px;
     margin: 0 auto;
 }
 
@@ -707,7 +729,14 @@ textarea::placeholder {
     height: 48px;
     border-radius: 50%;
     border: 2px solid #000;
+    margin-left: -40px;
 }
+
+.kanan {
+    width: 550px;
+    min-height: 100vh;
+    background-color: black;
+  }
 
 .post-kanan {
     display: flex;
@@ -718,18 +747,20 @@ textarea::placeholder {
 .post-kanan h3 {
     margin: 0;
     font-size: 16px;
-    color: #000;
+    color: #fff;
 }
 
 .post-kanan p {
     margin: 5px 0;
     font-size: 14px;
-    color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: start;
 }
 
 .post-kanan small {
     font-size: 12px;
-    color: gray;
+    color: #fff;
 }
 
 /* postingan reply */
@@ -737,9 +768,11 @@ textarea::placeholder {
     margin-top: 6px;
     margin-left: 12px;
     padding: 6px 10px;
-    background-color: #f0f0f0;
+    background-color: black;
     border-radius: 10px;
     font-size: 14px;
+    color: white;
+    border: solid 1px white;
 }
 
 .postingan-reply-jumlah p {
@@ -839,7 +872,7 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid transparent;
     color: white;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: black;
 }
 
 .reply-preview {
@@ -921,6 +954,7 @@ textarea {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 480px;
 }
 
 .postingBtn {
@@ -930,12 +964,13 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: white;
+    margin-left: 161px;
 }
 
 #pos {
     font-size: 20px;
-    color: white;
+    color: black;
 }
 
 /* modal Sign in */
@@ -965,7 +1000,8 @@ textarea {
 .modal-top-in {
     display: flex;
     gap: 200px;
-    margin-top: 5px;
+    margin-top: 8px;
+    margin-left: 5px;
 }
 
 .modal-form-in {
@@ -975,7 +1011,6 @@ textarea {
 }
 
 .modal-form-input-in form {
-    /* width: 60%; */
     display: flex;
     flex-direction: column;
 }
@@ -999,13 +1034,82 @@ textarea {
     background-color: white;
 }
 
+/* modal sign up */
+#modal-sign-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.439);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #modal-sign-up img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .modal {
+    background-color: black;
+    width: 500px;
+    height: 600px;
+  }
+
+  .modal-top {
+    display: flex;
+    gap: 200px;
+    margin-top: 5px;
+  }
+
+  .modal-form {
+    color: white;
+    width: 400px;
+    margin-left: 50px;
+  }
+
+  .modal-form-input form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-control {
+    width: 75%;
+    height: 20px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    gap: 10px;
+  }
+
+  .dob-input {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-input {
+    width: auto;
+    height: 40px;
+    margin-top: 200px;
+    border-radius: 100px;
+    border: 1px solid white;
+    background-color: white;
+  }
+  
 #main {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-logo img {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+    left: 800px;
+    margin-top: 280px;
 }
 
 .main-logo {
@@ -1022,6 +1126,7 @@ textarea {
     display: grid;
     justify-content: center;
     padding: 0;
+    margin-top: 160px;
 }
 
 .main-action-text {
@@ -1030,6 +1135,21 @@ textarea {
     margin-top: 50px;
     padding: 0;
     color: white;
+}
+
+.main-action-text h1 {
+    font-size: 64px; 
+    font-weight: bold;
+    color: white; 
+    margin-bottom: 10px; 
+    text-align: left; 
+}
+
+.main-action-text h2 {
+    font-size: 32px;
+    font-weight: normal;
+    color: white; 
+    text-align: left; 
 }
 
 .main-action h1 {
@@ -1083,4 +1203,53 @@ textarea {
 .main-action-button p {
     font-size: 10px;
     margin-top: 0;
+}
+
+#btn-sign-in {
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    border-radius: 100px;
+    background-color: black;
+    border: 1px solid white;
+    color: rgb(0, 204, 255);
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; 
+    width: 100%; 
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: gray;
+}
+
+.divider span {
+    margin: 0 10px; 
+    color: gray;
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+.already-have-account {
+    text-align: left; 
+    margin-top: 10px; 
+}
+
+.already-have-account h4 {
+    font-size: 16px; 
+    font-weight: bold;
+    color: white; 
+    margin-bottom: 10px; 
 }

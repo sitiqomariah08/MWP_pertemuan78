@@ -31,6 +31,8 @@ if (isset($_SESSION['username'])) {
 
             <div class="main-action">
                 <div class="main-action-text">
+                    <h1>Happening now</h1>
+                    <br>
                     <h2>Join today.</h2>
                 </div>
                 <div class="main-action-button">
@@ -39,22 +41,24 @@ if (isset($_SESSION['username'])) {
                         Sign in with Google
                     </button>
                     <button>
-                        <img src="aset/apple-173-svgrepo-com.svg" alt="apple">
+                        <img src="aset/apple-173-svgrepo-com (1).svg" alt="apple">
                         Sign in with Apple
-                    </button><br>
+                    </button>
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
                     <button id="btn-create-account">
                         Create account
                     </button>
-                    <p>By signing up, you agree to the <a>Terms of Service</a> and <a>Privacy Policy</a>, including
-                        <a>Cookie Use.</a>
-                    </p>
+                    <p>By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</p>
                     <br>
-                    <h4>Already have an account?</h4>
-                    <button id="btn-sign-in">
-                        Sign in
-                    </button>
+                    <div class="already-have-account">
+                        <h4>Already have an account?</h4>
+                        <button id="btn-sign-in">
+                            Sign in
+                        </button>
+                    </div>
                 </div>
-            </div>
         </main>
 
         <footer>
@@ -77,9 +81,9 @@ if (isset($_SESSION['username'])) {
                     for Business</a>
                 <a href="https://developer.x.com/en">Developers</a>
                 <a href="https://x.com/i/directory/profiles">Directory</a>
-                <a href="https://x.com/settings/account/personalization">Settings</a>
+                <a href="https://x.com/settings/account/personalization">Settings</a>\
+                <p>© 2025 X Corp.</p>
             </div>
-            <p>© 2025 X Corp.</p>
         </footer>
 
         <div id="modal-sign-up">
@@ -109,10 +113,12 @@ if (isset($_SESSION['username'])) {
                 <div class="modal-top-in">
                     <img src="aset/close-svgrepo-com.svg" alt="close" id="close-in">
                     <img src="aset/icon-x.svg" alt="logo">
+                    <br><br><br><br>
                 </div>
 
                 <div class="modal-form-in">
                     <h1>Login your account</h1>
+                    <br>
                     <div class="modal-form-input-in">
                         <form method="post" action="login.php">
                             <input type="text" class="form-control-in" name="username" placeholder="Username">
@@ -131,29 +137,29 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const savedUsername = localStorage.getItem("last_username");
             if (savedUsername) {
                 document.querySelector("input[name='username']").value = savedUsername;
             }
         });
 
-        $(function () {
-            $("#btn-create-account").click(function () {
+        $(function() {
+            $("#btn-create-account").click(function() {
                 $("#modal-sign-up").fadeIn().css("display", "flex");
             })
 
-            $("#close").click(function () {
+            $("#close").click(function() {
                 $("#modal-sign-up").fadeOut();
             })
         })
 
-        $(function () {
-            $("#btn-sign-in").click(function () {
+        $(function() {
+            $("#btn-sign-in").click(function() {
                 $("#modal-sign-in").fadeIn().css("display", "flex");
             })
 
-            $("#close-in").click(function () {
+            $("#close-in").click(function() {
                 $("#modal-sign-in").fadeOut();
             })
         })
