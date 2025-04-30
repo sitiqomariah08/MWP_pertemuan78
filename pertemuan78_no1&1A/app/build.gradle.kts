@@ -37,7 +37,7 @@ android {
 
 dependencies {
 
-    implementation("org.postgresql:postgresql:42.2.27")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.material)
